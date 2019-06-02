@@ -1,6 +1,6 @@
-﻿namespace CourseWork
+﻿namespace AvtoShopServiceDAL.BindingModels
 {
-    public class Car
+    class CarBindingModel
     {
         public int Id { set; get; }
         public string Firm { set; get; }
