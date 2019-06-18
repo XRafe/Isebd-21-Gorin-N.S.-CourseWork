@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CourseWork
+﻿namespace CourseWork
 {
     public class Client
     {
+        public int Id { set; get; }
+        public string PassportData { set; get; }
+        public string FIO { set; get; }
+        public string NumberPhone { set; get; }
+        public int Bonus { set; get; }
+        public bool BlockStatus { set; get; }
     }
 }

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CourseWork
+﻿namespace CourseWork
 {
     public class Payment
     {
+        public int OrderId { set; get; }
+        public int Paid { set; get; }
+        public string DatePay { set; get; }
     }
 }
