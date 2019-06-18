@@ -1,6 +1,6 @@
 ﻿namespace AvtoShopServiceDAL.BindingModels
 {
-    class CarOrderBindingModel
+    public class CarOrderBindingModel
     {
         public int Id { set; get; }
         public int CarId { set; get; }

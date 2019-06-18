@@ -1,6 +1,6 @@
 ﻿namespace AvtoShopServiceDAL.BindingModels
 {
-    class ClientBindingModel
+    public class ClientBindingModel
     {
         public int Id { set; get; }
         public string PassportData { set; get; }

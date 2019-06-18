@@ -1,6 +1,6 @@
 ﻿namespace AvtoShopServiceDAL.ViewModels
 {
-    class OrderViewModel
+    public class OrderViewModel
     {
         public int Id { set; get; }
         public int Sum { set; get; }

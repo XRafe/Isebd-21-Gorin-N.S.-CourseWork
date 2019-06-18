@@ -1,6 +1,6 @@
 ﻿namespace AvtoShopServiceDAL.BindingModels
 {
-    class OrderBindingModel
+    public class OrderBindingModel
     {
         public int Id { set; get; }
         public int Sum { set; get; }
