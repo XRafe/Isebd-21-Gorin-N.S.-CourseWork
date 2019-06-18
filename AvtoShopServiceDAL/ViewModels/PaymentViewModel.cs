@@ -1,6 +1,6 @@
-﻿namespace CourseWork
+﻿namespace AvtoShopServiceDAL.ViewModels
 {
-    public class Payment
+    public class PaymentViewModel
     {
         public int OrderId { set; get; }
         public int Paid { set; get; }

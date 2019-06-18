@@ -1,6 +1,6 @@
-﻿namespace CourseWork
+﻿namespace AvtoShopServiceDAL.ViewModels
 {
-    public class CarOrder
+    public class CarOrderViewModel
     {
         public int Id { set; get; }
         public int CarId { set; get; }

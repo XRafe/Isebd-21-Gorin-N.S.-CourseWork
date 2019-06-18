@@ -1,6 +1,6 @@
-﻿namespace CourseWork
+﻿namespace AvtoShopServiceDAL.BindingModels
 {
-    public class Payment
+    public class PaymentBindingModel
     {
         public int OrderId { set; get; }
         public int Paid { set; get; }

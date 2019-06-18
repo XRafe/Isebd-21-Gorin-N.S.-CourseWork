@@ -1,6 +1,6 @@
-﻿namespace CourseWork
+﻿namespace AvtoShopServiceDAL.ViewModels
 {
-    public class Client
+    public class ClientViewModel
     {
         public int Id { set; get; }
         public string PassportData { set; get; }
