@@ -52,6 +52,11 @@
     <Compile Include="Implementations\CarServiceDB.cs" />
     <Compile Include="Implementations\ClientServiceDB.cs" />
     <Compile Include="Implementations\MainServiceDB.cs" />
+    <Compile Include="Migrations\201909031602390_First.cs" />
+    <Compile Include="Migrations\201909031602390_First.Designer.cs">
+      <DependentUpon>201909031602390_First.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +72,11 @@
       <Project>{0A2B8748-E736-4C70-9E54-4650D8D682ED}</Project>
       <Name>AvtoShop</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201909031602390_First.resx">
+      <DependentUpon>201909031602390_First.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
