@@ -117,10 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Target" xml:space="preserve">
-    <value>H4sIAAAAAAAEAO1ZzW7jNhC+F+g7CDq1QNbKz6UN5F0kTlIY3cTGKtmiR1oa20IoUiUpw362PfSR+god6peSZVt27MW2WOQSkTMfh8OP5MfxP1/+dj8sI2otQMiQs7590Tu3LWA+D0I269uJmr77xf7w/scf3PsgWlqfC7srbYeeTPbtuVLxteNIfw4Rkb0o9AWXfKp6Po8cEnDn8vz8V+fiwgGEsBHLstxPCVNhBOkHfg448yFWCaGPPAAq83bs8VJU64lEIGPiQ9++WSjuzXnsgViEPgyjmEIETN0RRW6JBNu6oSHBuDygU9sijHFFFEZ9/SLBU4KzmRdjA6HPqxjQbkqo9kpnc12Zd53Y+aWemFM5FlB+IhWP9gS8uMoz5TTdD8q3XWYSc3mPOVcrPes0n317QIRtNce5HlChbbCbJ0LCH1y89tDyzKq+z0omIGH0H3YmVCUC+gwSJQg9s8bJhIb+77B65q/A+iyh1IwG48G+WgM2jQWPQajVJ5jmMQ4D23Lqfk7TsXQzfLIpDJm6urStJxycTCiUi21M11NcwG/AQBAFwZgoBYJpDEjTtTZ6Y6yHUETFaMgu3Da29UiWH4HN1Lxv47+29RAuISha8gheWIi7DJ2USGDXIOmuOPkof4Lmw/bEmQiuUzFqO89oiMnsSrXU+DvbWscaEyljLtLD7uR8eBiOTj7GUxJNQIznnMHJx7rlLJH7ELwFgnL/1cO1rIBuOadA2LH2ykgE0PVUTm2/75TWsbJjZPeI21G8JHobwEBAOh3csMcm+HZKoaRSJMTsVXf93a1uhGXbSYzaKGeYzMeqTysD9UBVcLgDqgAyudVLFYWzwzVdmVbv/J7YAZDSvs0/3zttSSrTUUlLJ9OWhQZ1NohQ95HEMa6XIUrzFsvLFOngnbe/OIsyDMeXLRqtjLYcCTcDmUGjVx8GAaACkemFMEnV7yCI1s3Mxd+Q3GIoY32bp0CV8MJY/5857JLlKTUagFUqH3B22jqdKJQxZRJ1zSt9FxBKRMv5MuA0idimM2qbd6bkTP+spTtCLtNMiLypO0YmwkyIrGUdwXUayWsul7O2Xo3zurn23ZiRb9/jkiPb+QfwY4PjaShSl18mTr1nD9JpjVXjnG7o7l/TTyZOraM7Xq6RTKS8aQ8MUyTVkMyOb4bQ+XVyVD5nN9H+dN7gdxo2VxLJxKhauyOlMskESRv2iKSmkmrR1Hq+MmfWxEPTpBy9FBENseDmF/fustbaTZ6Z2BamahEG+hb3VlJB1NMGPe8vWqilwuCRsHAKUmW63r48v7hs1MK+nbqUI2VAdxenvvq7JNQJ3fny2PMNYJaI2IIIf07ETxFZ/mwi7V0GehOSWepJ53zUQs//Y9naai1vSrpRT3kTTkvN5E14tbrIbjZ0qopMwqORquVO/M9yqlmVOCTbRk3iEPe2isQe9Nmz6rD2Pt1ZVthUVcjuw74dTDiGnYWXVSE61Ru2lBtakYsiRZdaxOZSRBt0Ub44sEyxrihcx/w5zb0DGc4qCP3jGgNfL3kFWtgM2ZQX/MBJmREVJs07CBQJcDFvhAqnxFfY7YOUaUHrM6EJmtzj8RQM2ShRcaJupIRoQmv1OtfZPn5ai6nH7I5i/SWPMQUMM8QpwIjdJiENyrgfWg6pDRCa1/mxgFF5Sh8Ps1WJ9LT26toElKfvDmJg+lB5BnxLIJgcMY8s4JDYXiR8hBnxV4Uw3AyyeyHqaXfvQjITJJI5RuWPn8jhIFq+/xeBnWmUVR4AAA==</value>
-  </data>
-  <data name="DefaultSchema" xml:space="preserve">
-    <value>dbo</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="TIMCYR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>TIMCYR.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

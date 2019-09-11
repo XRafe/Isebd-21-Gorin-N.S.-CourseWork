@@ -36,6 +36,7 @@
             this.labelFIO = new System.Windows.Forms.Label();
             this.labelPassport = new System.Windows.Forms.Label();
             this.labelPhone = new System.Windows.Forms.Label();
+            this.CheckStatusClient = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // buttonSave
@@ -106,11 +107,23 @@
             this.labelPhone.TabIndex = 7;
             this.labelPhone.Text = "Номер телефона:";
             // 
+            // CheckStatusClient
+            // 
+            this.CheckStatusClient.AutoSize = true;
+            this.CheckStatusClient.Location = new System.Drawing.Point(12, 106);
+            this.CheckStatusClient.Name = "CheckStatusClient";
+            this.CheckStatusClient.Size = new System.Drawing.Size(87, 17);
+            this.CheckStatusClient.TabIndex = 8;
+            this.CheckStatusClient.Text = "Блокировка";
+            this.CheckStatusClient.UseVisualStyleBackColor = true;
+            this.CheckStatusClient.CheckedChanged += new System.EventHandler(this.CheckStatusClient_CheckedChanged);
+            // 
             // FormClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 135);
+            this.Controls.Add(this.CheckStatusClient);
             this.Controls.Add(this.labelPhone);
             this.Controls.Add(this.labelPassport);
             this.Controls.Add(this.labelFIO);
@@ -137,5 +150,6 @@
         private System.Windows.Forms.Label labelFIO;
         private System.Windows.Forms.Label labelPassport;
         private System.Windows.Forms.Label labelPhone;
+        private System.Windows.Forms.CheckBox CheckStatusClient;
     }
 }

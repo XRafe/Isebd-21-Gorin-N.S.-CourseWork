@@ -12,6 +12,7 @@ namespace AvtoShopServiceView
         [Dependency]
         public new IUnityContainer Container { get; set; }
 
+        public static bool checkstatus = false;
         public int Id { set { id = value; } }
         private readonly IClientService service;
         private int? id;
@@ -37,14 +38,20 @@ namespace AvtoShopServiceView
                     service.UpdElement(new ClientBindingModel
                     {
                         Id = id.Value,
-                        FIO = textBoxFIO.Text
+                        FIO = textBoxFIO.Text,
+                        PassportData = textBoxPassport.Text,
+                        NumberPhone = textBoxPhone.Text,
+                        BlockStatus = checkstatus
                     });
                 }
                 else
                 {
                     service.AddElement(new ClientBindingModel
                     {
-                        FIO = textBoxFIO.Text
+                        FIO = textBoxFIO.Text,
+                        PassportData = textBoxPassport.Text,
+                        NumberPhone = textBoxPhone.Text,
+                        BlockStatus = checkstatus
                     });
                 }
                 MessageBox.Show("Сохранение прошло успешно", "Сообщение",
@@ -81,7 +88,18 @@ namespace AvtoShopServiceView
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
+            Close();
+        }
 
+        private void CheckStatusClient_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkstatus == false)
+            {
+                checkstatus = true;
+            } else
+            {
+                checkstatus = false;
+            }
         }
     }
 }

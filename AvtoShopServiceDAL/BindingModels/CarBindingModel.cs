@@ -6,5 +6,6 @@
         public string Firm { set; get; }
         public string Model { set; get; }
         public int Year { set; get; }
+        public int Price { set; get; }
     }
 }

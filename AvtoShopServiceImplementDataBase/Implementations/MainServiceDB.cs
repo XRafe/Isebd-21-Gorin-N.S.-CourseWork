@@ -4,6 +4,7 @@ using AvtoShopServiceDAL.ViewModels;
 using CourseWork;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.SqlServer;
 using System.Linq;
 
@@ -21,11 +22,16 @@ namespace AvtoShopServiceImplementDataBase.Implementations
             List<OrderViewModel> result = context.Orders.Select(rec => new OrderViewModel
             {
                 Id = rec.Id,
+                Count = rec.Count,
                 ClientId = rec.ClientId,
-                CreationDate = SqlFunctions.DateName("dd", rec.CreationDate) + " " +
-            SqlFunctions.DateName("mm", rec.CreationDate) + " " +
-            SqlFunctions.DateName("yyyy", rec.CreationDate),
-                Sum = rec.Sum
+                DateCreate = SqlFunctions.DateName("dd", rec.DateCreate)
+           + " " +
+            SqlFunctions.DateName("mm", rec.DateCreate) +
+           " " +
+            SqlFunctions.DateName("yyyy",
+           rec.DateCreate),
+                Sum = rec.Sum,
+                ClientFIO = rec.Client.FIO
             })
             .ToList();
             return result;
@@ -35,6 +41,8 @@ namespace AvtoShopServiceImplementDataBase.Implementations
             context.Orders.Add(new Order
             {
                 ClientId = model.ClientId,
+                DateCreate = DateTime.Now,
+                Count = model.Count,
                 Sum = model.Sum,
             });
             context.SaveChanges();

@@ -21,7 +21,9 @@ namespace AvtoShopServiceImplementDataBase.Implementations
            ClientViewModel
             {
                 Id = rec.Id,
-                FIO = rec.FIO
+                FIO = rec.FIO,
+                PassportData = rec.PassportData,
+                NumberPhone = rec.NumberPhone,
             })
             .ToList();
             return result;
@@ -34,7 +36,9 @@ namespace AvtoShopServiceImplementDataBase.Implementations
                 return new ClientViewModel
                 {
                     Id = element.Id,
-                    FIO = element.FIO
+                    FIO = element.FIO,
+                    PassportData = element.PassportData,
+                    NumberPhone = element.NumberPhone
                 };
             }
             throw new Exception("Элемент не найден");
@@ -42,14 +46,16 @@ namespace AvtoShopServiceImplementDataBase.Implementations
         public void AddElement(ClientBindingModel model)
         {
             Client element = context.Clients.FirstOrDefault(rec => rec.FIO ==
-           model.FIO);
+           model.FIO && rec.PassportData == model.FIO && rec.NumberPhone == model.NumberPhone);
             if (element != null)
             {
                 throw new Exception("Уже есть клиент с таким ФИО");
             }
             context.Clients.Add(new Client
             {
-                FIO = model.FIO
+                FIO = model.FIO,
+                PassportData = model.PassportData,
+                NumberPhone = model.NumberPhone
             });
             context.SaveChanges();
         }

@@ -36,6 +36,8 @@
             this.buttonPayment = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.buttonUpdate = new System.Windows.Forms.Button();
+            this.бэкапXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.бэкапJSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +56,9 @@
             // 
             this.справочникToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.клиентыToolStripMenuItem,
-            this.автомобилиToolStripMenuItem});
+            this.автомобилиToolStripMenuItem,
+            this.бэкапXMLToolStripMenuItem,
+            this.бэкапJSONToolStripMenuItem});
             this.справочникToolStripMenuItem.Name = "справочникToolStripMenuItem";
             this.справочникToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.справочникToolStripMenuItem.Text = "Справочник";
@@ -62,14 +66,14 @@
             // клиентыToolStripMenuItem
             // 
             this.клиентыToolStripMenuItem.Name = "клиентыToolStripMenuItem";
-            this.клиентыToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.клиентыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.клиентыToolStripMenuItem.Text = "Клиенты";
             this.клиентыToolStripMenuItem.Click += new System.EventHandler(this.клиентыToolStripMenuItem_Click);
             // 
             // автомобилиToolStripMenuItem
             // 
             this.автомобилиToolStripMenuItem.Name = "автомобилиToolStripMenuItem";
-            this.автомобилиToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.автомобилиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.автомобилиToolStripMenuItem.Text = "Автомобили";
             this.автомобилиToolStripMenuItem.Click += new System.EventHandler(this.автомобилиToolStripMenuItem_Click);
             // 
@@ -111,6 +115,20 @@
             this.buttonUpdate.UseVisualStyleBackColor = true;
             this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
+            // бэкапXMLToolStripMenuItem
+            // 
+            this.бэкапXMLToolStripMenuItem.Name = "бэкапXMLToolStripMenuItem";
+            this.бэкапXMLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.бэкапXMLToolStripMenuItem.Text = "Бэкап XML";
+            this.бэкапXMLToolStripMenuItem.Click += new System.EventHandler(this.бэкапXMLToolStripMenuItem_Click);
+            // 
+            // бэкапJSONToolStripMenuItem
+            // 
+            this.бэкапJSONToolStripMenuItem.Name = "бэкапJSONToolStripMenuItem";
+            this.бэкапJSONToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.бэкапJSONToolStripMenuItem.Text = "Бэкап JSON";
+            this.бэкапJSONToolStripMenuItem.Click += new System.EventHandler(this.бэкапJSONToolStripMenuItem_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -124,6 +142,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMain";
             this.Text = "Главная страница";
+            this.Load += new System.EventHandler(this.FormMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -142,5 +161,7 @@
         private System.Windows.Forms.Button buttonPayment;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button buttonUpdate;
+        private System.Windows.Forms.ToolStripMenuItem бэкапXMLToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem бэкапJSONToolStripMenuItem;
     }
 }

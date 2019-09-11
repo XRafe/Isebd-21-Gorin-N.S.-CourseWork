@@ -13,7 +13,7 @@ namespace AvtoShopServiceImplementDataBase.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201909031602390_First"; }
+            get { return "201909060125074_First"; }
         }
         
         string IMigrationMetadata.Source

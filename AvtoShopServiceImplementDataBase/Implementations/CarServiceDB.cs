@@ -23,7 +23,8 @@ namespace AvtoShopServiceImplementDataBase.Implementations
                 Id = rec.Id,
                 Firm = rec.Firm,
                 Model = rec.Model,
-                Year = rec.Year
+                Year = rec.Year,
+                Price = rec.Price
             })
             .ToList();
             return result;
@@ -38,7 +39,8 @@ namespace AvtoShopServiceImplementDataBase.Implementations
                     Id = element.Id,
                     Firm = element.Firm,
                     Model = element.Model,
-                    Year = element.Year
+                    Year = element.Year,
+                    Price = element.Price
                 };
             }
             throw new Exception("Элемент не найден");
@@ -55,7 +57,8 @@ namespace AvtoShopServiceImplementDataBase.Implementations
             {
                 Firm = model.Firm,
                 Model = model.Model,
-                Year = model.Year
+                Year = model.Year,
+                Price = model.Price
             });
             context.SaveChanges();
         }

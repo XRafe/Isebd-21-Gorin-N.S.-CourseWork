@@ -52,14 +52,20 @@ namespace AvtoShopServiceView
                     service.UpdElement(new CarBindingModel
                     {
                         Id = id.Value,
-                        Firm = textBoxFirm.Text
+                        Firm = textBoxFirm.Text,
+                        Model = textBoxModel.Text,
+                        Year = Int32.Parse(textBoxYear.Text),
+                        Price = Int32.Parse(textBoxPrice.Text)
                     });
                 }
                 else
                 {
                     service.AddElement(new CarBindingModel
                     {
-                        Firm = textBoxFirm.Text
+                        Firm = textBoxFirm.Text,
+                        Model = textBoxModel.Text,
+                        Year = Int32.Parse(textBoxYear.Text),
+                        Price = Int32.Parse(textBoxPrice.Text)
                     });
                 }
                 MessageBox.Show("Сохранение прошло успешно", "Сообщение",

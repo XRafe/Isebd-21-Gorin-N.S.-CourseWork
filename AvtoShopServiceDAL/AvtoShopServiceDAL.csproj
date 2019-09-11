@@ -33,6 +33,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,16 +43,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributies\UsageInterfaceAttribute.cs" />
+    <Compile Include="Attributies\UsageMethodAttribute.cs" />
+    <Compile Include="BindingModels\BackupBindingModel.cs" />
     <Compile Include="BindingModels\CarBindingModel.cs" />
-    <Compile Include="BindingModels\CarOrderBindingModel.cs" />
     <Compile Include="BindingModels\ClientBindingModel.cs" />
     <Compile Include="BindingModels\OrderBindingModel.cs" />
     <Compile Include="BindingModels\PaymentBindingModel.cs" />
+    <Compile Include="BindingModels\ReptBindingModel.cs" />
+    <Compile Include="Interfaces\IBackupService.cs" />
     <Compile Include="Interfaces\ICarService.cs" />
     <Compile Include="Interfaces\IClientService.cs" />
     <Compile Include="Interfaces\IMainService.cs" />
+    <Compile Include="Interfaces\IReptService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\CarOrderViewModel.cs" />
     <Compile Include="ViewModels\CarViewModel.cs" />
     <Compile Include="ViewModels\ClientViewModel.cs" />
     <Compile Include="ViewModels\OrderViewModel.cs" />

@@ -88,5 +88,11 @@ namespace AvtoShopServiceView
                 }
             }
         }
+
+        private void FormClients_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
     }
 }

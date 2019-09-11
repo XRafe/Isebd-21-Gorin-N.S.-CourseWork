@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.CheckStatusClient = new System.Windows.Forms.CheckBox();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonChange = new System.Windows.Forms.Button();
@@ -45,19 +44,9 @@
             this.dataGridView1.Size = new System.Drawing.Size(483, 290);
             this.dataGridView1.TabIndex = 0;
             // 
-            // CheckStatusClient
-            // 
-            this.CheckStatusClient.AutoSize = true;
-            this.CheckStatusClient.Location = new System.Drawing.Point(503, 13);
-            this.CheckStatusClient.Name = "CheckStatusClient";
-            this.CheckStatusClient.Size = new System.Drawing.Size(87, 17);
-            this.CheckStatusClient.TabIndex = 1;
-            this.CheckStatusClient.Text = "Блокировка";
-            this.CheckStatusClient.UseVisualStyleBackColor = true;
-            // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(503, 37);
+            this.buttonAdd.Location = new System.Drawing.Point(502, 13);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(88, 27);
             this.buttonAdd.TabIndex = 2;
@@ -67,7 +56,7 @@
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(503, 103);
+            this.buttonDelete.Location = new System.Drawing.Point(503, 79);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(88, 27);
             this.buttonDelete.TabIndex = 3;
@@ -77,7 +66,7 @@
             // 
             // buttonChange
             // 
-            this.buttonChange.Location = new System.Drawing.Point(503, 70);
+            this.buttonChange.Location = new System.Drawing.Point(503, 46);
             this.buttonChange.Name = "buttonChange";
             this.buttonChange.Size = new System.Drawing.Size(88, 27);
             this.buttonChange.TabIndex = 4;
@@ -87,7 +76,7 @@
             // 
             // buttonUpdate
             // 
-            this.buttonUpdate.Location = new System.Drawing.Point(502, 136);
+            this.buttonUpdate.Location = new System.Drawing.Point(502, 112);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(88, 27);
             this.buttonUpdate.TabIndex = 5;
@@ -104,20 +93,18 @@
             this.Controls.Add(this.buttonChange);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonAdd);
-            this.Controls.Add(this.CheckStatusClient);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormClients";
             this.Text = "Клиенты";
+            this.Load += new System.EventHandler(this.FormClients_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.CheckBox CheckStatusClient;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonChange;

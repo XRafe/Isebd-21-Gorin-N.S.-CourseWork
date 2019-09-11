@@ -96,6 +96,7 @@
             this.Controls.Add(this.dataGridView);
             this.Name = "FormCars";
             this.Text = "Автомобили";
+            this.Load += new System.EventHandler(this.FormCars_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
 

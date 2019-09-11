@@ -36,11 +36,13 @@
             this.labelFirm = new System.Windows.Forms.Label();
             this.labelModel = new System.Windows.Forms.Label();
             this.labelYear = new System.Windows.Forms.Label();
+            this.textBoxPrice = new System.Windows.Forms.TextBox();
+            this.labelPrice = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(199, 100);
+            this.buttonSave.Location = new System.Drawing.Point(198, 149);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(75, 23);
             this.buttonSave.TabIndex = 0;
@@ -50,7 +52,7 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(280, 100);
+            this.buttonCancel.Location = new System.Drawing.Point(280, 149);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 1;
@@ -106,11 +108,29 @@
             this.labelYear.TabIndex = 7;
             this.labelYear.Text = "Год:";
             // 
+            // textBoxPrice
+            // 
+            this.textBoxPrice.Location = new System.Drawing.Point(103, 100);
+            this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.Size = new System.Drawing.Size(252, 20);
+            this.textBoxPrice.TabIndex = 8;
+            // 
+            // labelPrice
+            // 
+            this.labelPrice.AutoSize = true;
+            this.labelPrice.Location = new System.Drawing.Point(13, 107);
+            this.labelPrice.Name = "labelPrice";
+            this.labelPrice.Size = new System.Drawing.Size(36, 13);
+            this.labelPrice.TabIndex = 9;
+            this.labelPrice.Text = "Цена:";
+            // 
             // FormCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(375, 135);
+            this.ClientSize = new System.Drawing.Size(375, 184);
+            this.Controls.Add(this.labelPrice);
+            this.Controls.Add(this.textBoxPrice);
             this.Controls.Add(this.labelYear);
             this.Controls.Add(this.labelModel);
             this.Controls.Add(this.labelFirm);
@@ -136,5 +156,7 @@
         private System.Windows.Forms.Label labelFirm;
         private System.Windows.Forms.Label labelModel;
         private System.Windows.Forms.Label labelYear;
+        private System.Windows.Forms.TextBox textBoxPrice;
+        private System.Windows.Forms.Label labelPrice;
     }
 }
