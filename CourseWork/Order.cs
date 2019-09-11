@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
 
 namespace CourseWork
@@ -22,7 +24,10 @@ namespace CourseWork
         public DateTime DateCreate { set; get; }
         [DataMember]
         public string ClientFIO { set; get; }
+
+
         public virtual Client Client { get; set; }
         public virtual Car Car { get; set; }
+
     }
 }
