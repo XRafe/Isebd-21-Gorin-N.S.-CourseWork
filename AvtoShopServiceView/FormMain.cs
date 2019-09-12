@@ -61,12 +61,6 @@ namespace AvtoShopServiceView
             form.ShowDialog();
         }
 
-        private void buttonPayment_Click(object sender, EventArgs e)
-        {
-            var form = Container.Resolve<FormPayment>();
-            form.ShowDialog();
-        }
-
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
             LoadData();
@@ -115,6 +109,18 @@ namespace AvtoShopServiceView
         private void FormMain_Load(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        private void excelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = Container.Resolve<FormReport>();
+            form.ShowDialog();
+        }
+
+        private void pDFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = Container.Resolve<FormReportPDF>();
+            form.ShowDialog();
         }
     }
 }

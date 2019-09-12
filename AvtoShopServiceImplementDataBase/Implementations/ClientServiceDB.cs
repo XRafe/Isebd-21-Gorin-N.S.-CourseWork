@@ -24,6 +24,8 @@ namespace AvtoShopServiceImplementDataBase.Implementations
                 FIO = rec.FIO,
                 PassportData = rec.PassportData,
                 NumberPhone = rec.NumberPhone,
+                Bonus = rec.Bonus,
+                BlockStatus = rec.BlockStatus
             })
             .ToList();
             return result;
@@ -38,7 +40,9 @@ namespace AvtoShopServiceImplementDataBase.Implementations
                     Id = element.Id,
                     FIO = element.FIO,
                     PassportData = element.PassportData,
-                    NumberPhone = element.NumberPhone
+                    NumberPhone = element.NumberPhone,
+                    Bonus = element.Bonus,
+                    BlockStatus = element.BlockStatus
                 };
             }
             throw new Exception("Элемент не найден");
@@ -55,7 +59,9 @@ namespace AvtoShopServiceImplementDataBase.Implementations
             {
                 FIO = model.FIO,
                 PassportData = model.PassportData,
-                NumberPhone = model.NumberPhone
+                NumberPhone = model.NumberPhone,
+                Bonus = model.Bonus,
+                BlockStatus = model.BlockStatus
             });
             context.SaveChanges();
         }
@@ -73,6 +79,10 @@ namespace AvtoShopServiceImplementDataBase.Implementations
                 throw new Exception("Элемент не найден");
             }
             element.FIO = model.FIO;
+            element.PassportData = model.PassportData;
+            element.NumberPhone = model.NumberPhone;
+            element.Bonus = model.Bonus;
+            element.BlockStatus = model.BlockStatus;
             context.SaveChanges();
         }
         public void DelElement(int id)

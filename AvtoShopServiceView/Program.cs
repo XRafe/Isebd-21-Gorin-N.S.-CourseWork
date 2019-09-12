@@ -37,6 +37,8 @@ namespace AvtoShopServiceView
            HierarchicalLifetimeManager());
             currentContainer.RegisterType<IBackupService, BackupServiceDB>(new
            HierarchicalLifetimeManager());
+            currentContainer.RegisterType<IReptService, ReptServiceDB>(new
+HierarchicalLifetimeManager());
             return currentContainer;
         }
     }

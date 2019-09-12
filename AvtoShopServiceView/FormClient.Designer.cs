@@ -37,11 +37,13 @@
             this.labelPassport = new System.Windows.Forms.Label();
             this.labelPhone = new System.Windows.Forms.Label();
             this.CheckStatusClient = new System.Windows.Forms.CheckBox();
+            this.labelBonuses = new System.Windows.Forms.Label();
+            this.textBoxBonuses = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(180, 100);
+            this.buttonSave.Location = new System.Drawing.Point(177, 137);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(75, 23);
             this.buttonSave.TabIndex = 0;
@@ -51,7 +53,7 @@
             // 
             // buttonClose
             // 
-            this.buttonClose.Location = new System.Drawing.Point(261, 100);
+            this.buttonClose.Location = new System.Drawing.Point(261, 137);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(75, 23);
             this.buttonClose.TabIndex = 1;
@@ -110,7 +112,7 @@
             // CheckStatusClient
             // 
             this.CheckStatusClient.AutoSize = true;
-            this.CheckStatusClient.Location = new System.Drawing.Point(12, 106);
+            this.CheckStatusClient.Location = new System.Drawing.Point(12, 137);
             this.CheckStatusClient.Name = "CheckStatusClient";
             this.CheckStatusClient.Size = new System.Drawing.Size(87, 17);
             this.CheckStatusClient.TabIndex = 8;
@@ -118,11 +120,29 @@
             this.CheckStatusClient.UseVisualStyleBackColor = true;
             this.CheckStatusClient.CheckedChanged += new System.EventHandler(this.CheckStatusClient_CheckedChanged);
             // 
+            // labelBonuses
+            // 
+            this.labelBonuses.AutoSize = true;
+            this.labelBonuses.Location = new System.Drawing.Point(51, 104);
+            this.labelBonuses.Name = "labelBonuses";
+            this.labelBonuses.Size = new System.Drawing.Size(48, 13);
+            this.labelBonuses.TabIndex = 9;
+            this.labelBonuses.Text = "Бонусы:";
+            // 
+            // textBoxBonuses
+            // 
+            this.textBoxBonuses.Location = new System.Drawing.Point(115, 104);
+            this.textBoxBonuses.Name = "textBoxBonuses";
+            this.textBoxBonuses.Size = new System.Drawing.Size(221, 20);
+            this.textBoxBonuses.TabIndex = 10;
+            // 
             // FormClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 135);
+            this.ClientSize = new System.Drawing.Size(344, 172);
+            this.Controls.Add(this.textBoxBonuses);
+            this.Controls.Add(this.labelBonuses);
             this.Controls.Add(this.CheckStatusClient);
             this.Controls.Add(this.labelPhone);
             this.Controls.Add(this.labelPassport);
@@ -151,5 +171,7 @@
         private System.Windows.Forms.Label labelPassport;
         private System.Windows.Forms.Label labelPhone;
         private System.Windows.Forms.CheckBox CheckStatusClient;
+        private System.Windows.Forms.Label labelBonuses;
+        private System.Windows.Forms.TextBox textBoxBonuses;
     }
 }

@@ -41,6 +41,7 @@ namespace AvtoShopServiceView
                         FIO = textBoxFIO.Text,
                         PassportData = textBoxPassport.Text,
                         NumberPhone = textBoxPhone.Text,
+                        Bonus = Int32.Parse(textBoxBonuses.Text),
                         BlockStatus = checkstatus
                     });
                 }
@@ -51,6 +52,7 @@ namespace AvtoShopServiceView
                         FIO = textBoxFIO.Text,
                         PassportData = textBoxPassport.Text,
                         NumberPhone = textBoxPhone.Text,
+                        Bonus = Int32.Parse(textBoxBonuses.Text),
                         BlockStatus = checkstatus
                     });
                 }

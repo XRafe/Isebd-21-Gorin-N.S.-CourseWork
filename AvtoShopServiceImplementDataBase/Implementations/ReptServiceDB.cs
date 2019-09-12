@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity.SqlServer;
 using System.IO;
+using System.Data.Entity;
 using System.Linq;
 
 namespace AvtoShopServiceImplementDataBase.Implementations
@@ -22,6 +23,8 @@ namespace AvtoShopServiceImplementDataBase.Implementations
             this.context = context;
             this.service = service;
         }
+
+
 
         public void SaveClientOrders(ReptBindingModel model)
         {
@@ -49,49 +52,35 @@ namespace AvtoShopServiceImplementDataBase.Implementations
                 Alignment = Element.ALIGN_CENTER,
                 SpacingAfter = 12
             };
-            doc.Add(paragraph);
-            var phrasePeriod = new Phrase("c " + model.DateFrom.Value.ToShortDateString()
-           +
-            " по " + model.DateTo.Value.ToShortDateString(),
-           new iTextSharp.text.Font(baseFont, 14,
-           iTextSharp.text.Font.BOLD));
-            paragraph = new iTextSharp.text.Paragraph(phrasePeriod)
-            {
-                Alignment = Element.ALIGN_CENTER,
-                SpacingAfter = 12
-            };
+   
             doc.Add(paragraph);
             //вставляем таблицу, задаем количество столбцов, и ширину колонок
-            PdfPTable table = new PdfPTable(6)
+            PdfPTable table = new PdfPTable(5)
             {
                 TotalWidth = 800F
             };
-            table.SetTotalWidth(new float[] { 160, 140, 160, 100, 100, 140 });
+            table.SetTotalWidth(new float[] { 160, 140, 160, 100, 100 });
             //вставляем шапку
             PdfPCell cell = new PdfPCell();
             var fontForCellBold = new iTextSharp.text.Font(baseFont, 10,
            iTextSharp.text.Font.BOLD);
-            table.AddCell(new PdfPCell(new Phrase("ФИО клиента", fontForCellBold))
+            table.AddCell(new PdfPCell(new Phrase("ФИО клиента:", fontForCellBold))
             {
                 HorizontalAlignment = Element.ALIGN_CENTER
             });
-            table.AddCell(new PdfPCell(new Phrase("Дата создания", fontForCellBold))
+            table.AddCell(new PdfPCell(new Phrase("Количество авто:", fontForCellBold))
             {
                 HorizontalAlignment = Element.ALIGN_CENTER
             });
-            table.AddCell(new PdfPCell(new Phrase("Сумма", fontForCellBold))
+            table.AddCell(new PdfPCell(new Phrase("Дата создания:", fontForCellBold))
             {
                 HorizontalAlignment = Element.ALIGN_CENTER
             });
-            table.AddCell(new PdfPCell(new Phrase("Статус", fontForCellBold))
+            table.AddCell(new PdfPCell(new Phrase("Сумма:", fontForCellBold))
             {
                 HorizontalAlignment = Element.ALIGN_CENTER
             });
-            table.AddCell(new PdfPCell(new Phrase("Дата последней оплаты", fontForCellBold))
-            {
-                HorizontalAlignment = Element.ALIGN_CENTER
-            });
-            table.AddCell(new PdfPCell(new Phrase("Остаток", fontForCellBold))
+            table.AddCell(new PdfPCell(new Phrase("Номер заказа:", fontForCellBold))
             {
                 HorizontalAlignment = Element.ALIGN_CENTER
             });
@@ -102,39 +91,19 @@ namespace AvtoShopServiceImplementDataBase.Implementations
             {
                 cell = new PdfPCell(new Phrase(list[i].ClientFIO, fontForCells));
                 table.AddCell(cell);
+                cell = new PdfPCell(new Phrase(list[i].Count.ToString(), fontForCells));
+                table.AddCell(cell);
                 cell = new PdfPCell(new Phrase(list[i].DateCreate, fontForCells));
                 table.AddCell(cell);
                 cell = new PdfPCell(new Phrase(list[i].Sum.ToString(), fontForCells));
                 cell.HorizontalAlignment = Element.ALIGN_RIGHT;
                 table.AddCell(cell);
-                cell = new PdfPCell(new Phrase(list[i].Status.ToString(), fontForCells));
+                cell = new PdfPCell(new Phrase(list[i].Id.ToString(), fontForCells));
                 table.AddCell(cell);
 
-                var payment = context.OrderPayments.ToList().LastOrDefault(rec1 => rec1.OrderId == list[i].Id);
-                if (payment != null)
-                {
-                    cell = new PdfPCell(new Phrase(payment.DatePayment.ToShortDateString(), fontForCells));
-                    table.AddCell(cell);
-                }
-                else
-                {
-                    cell = new PdfPCell(new Phrase("Оплат нет", fontForCells));
-                    table.AddCell(cell);
-                }
-                cell = new PdfPCell(new Phrase(service.GetBalance(list[i].Id).ToString(), fontForCells));
-                cell.HorizontalAlignment = Element.ALIGN_RIGHT;
-                table.AddCell(cell);
             }
-            //вставляем итого
-            cell = new PdfPCell(new Phrase("Итого:", fontForCellBold))
-            {
-                HorizontalAlignment = Element.ALIGN_RIGHT,
-                Colspan = 2,
-                Border = 0
-            };
-            table.AddCell(cell);
             cell = new PdfPCell(new Phrase(list.Sum(rec => rec.Sum).ToString(),
-           fontForCellBold))
+fontForCellBold))
             {
                 HorizontalAlignment = Element.ALIGN_RIGHT,
                 Border = 0
@@ -142,26 +111,25 @@ namespace AvtoShopServiceImplementDataBase.Implementations
             table.AddCell(cell);
             cell = new PdfPCell(new Phrase("", fontForCellBold))
             {
-                Colspan = 3,
                 Border = 0
             };
-            table.AddCell(cell);
+            table.AddCell(cell);            
             //вставляем таблицу
             doc.Add(table);
             doc.Close();
         }
 
-        public List<ClientViewModel> GetClientOrders(ReptBindingModel model)
+        public List<OrderViewModel> GetClientOrders(ReptBindingModel model)
         {
             return context.Orders
-
-            .Include(rec => rec.Order)
+            .Include(rec => rec.Client)
            .Where(rec => rec.DateCreate >= model.DateFrom &&
            rec.DateCreate <= model.DateTo)
             .Select(rec => new OrderViewModel
             {
                 Id = rec.Id,
                 ClientFIO = rec.Client.FIO,
+                Count = rec.Count,
                 ClientId = rec.Client.Id,
                 DateCreate = SqlFunctions.DateName("dd", rec.DateCreate)
            + " " +
@@ -239,19 +207,6 @@ namespace AvtoShopServiceImplementDataBase.Implementations
                     excelcells.Value2 = dict[i].Sum.ToString();
                     excelcells = excelcells.get_Offset(0, 1);
 
-                    var payment = context.Orders.ToList().LastOrDefault(rec1 => rec1.Id == dict[i].Id);
-                    if (payment != null)
-                    {
-                        excelcells = excelcells.get_Offset(0, 1);
-                        excelcells.ColumnWidth = 15;
-                        excelcells.Value2 = payment.DateCreate.ToShortDateString();
-                    }
-                    else
-                    {
-                        excelcells = excelcells.get_Offset(0, 1);
-                        excelcells.ColumnWidth = 15;
-                        excelcells.Value2 = "Оплат нет";
-                    }
                     
 
                     excelcells.Font.Bold = true;

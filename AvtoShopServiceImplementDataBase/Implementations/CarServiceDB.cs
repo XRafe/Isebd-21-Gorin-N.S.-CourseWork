@@ -76,6 +76,10 @@ namespace AvtoShopServiceImplementDataBase.Implementations
                 throw new Exception("Элемент не найден");
             }
             element.Firm = model.Firm;
+
+            element.Model = model.Model;
+            element.Year = model.Year;
+            element.Price = model.Price;
             context.SaveChanges();
         }
         public void DelElement(int id)
